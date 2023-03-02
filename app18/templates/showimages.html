@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for msg in messages %}
+    {{msg}}
+    {% endfor %}
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>AGE</th>
+            <th>PLACE</th>
+            <th>EMAIL</th>
+            <th>Photo</th>
+        </tr>
+         {% for image in images %}
+         <tr>
+            <td>{{image.id}}</td>
+            <td>{{image.Name}}</td>
+            <td>{{image.Age}}</td>
+            <td>{{image.Place}}</td>
+            <td>{{image.Email}}</td>
+            <td><img src="{{image.Photo.url}}" alt="" height="50px" width="50px">
+            
+    
+            </td>
+         </tr>
+         {% endfor %}
+    </table>
+</body>
+</html>

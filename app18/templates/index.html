@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for msg in messages %}
+    {{msg}}
+    {% endfor %}
+    welcome
+    <form action="{% url 'app18:mail' %}" method="post" class="contact-form">
+        {% csrf_token %}
+        <div class="form-group">
+            <input type="text" id="contact-name" name="contact-name" class="form-control" placeholder="Name" required/>
+        </div>
+        <div class="form-group">
+            <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Email" required/>
+        </div>
+        <div class="form-group">
+            <textarea id="contact_message" name="contact_message" class="form-control" rows="9" placeholder="Message" required/></textarea>
+        </div>
+        <button type="submit" class="float-right tm-button">send</button>
+    </form>
+
+    <a href="{% url 'app18:Signup' %}">Signup</a>
+
+    <a href="{% url 'app18:login'  %}">login</a>
+
+    <a href="{% url 'app18:showusers'  %}">showusers</a>
+
+    <a href="{% url 'app18:logout'  %}">logout</a>
+    
+    <a href="{% url 'app18:gallery'  %}">gallery</a>
+    
+    <a href="{% url  'app18:showimages' %}">showimages</a>
+
+
+
+    
+
+</body>
+</html>
